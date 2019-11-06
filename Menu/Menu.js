@@ -35,29 +35,21 @@ let menuItems = [
 */
 
 function createMenu(arr) {
+  // Created Elements
+  const menuContainer = document.createElement("div");
+  const list = document.createElement("ul");
+
+  //Iterating array and appending it to div
   arr.forEach(item => {
-    document.createElement("li");
+    const newItem = document.createElement("li");
+    newItem.textContent = item;
+    list.appendChild(newItem);
   });
+
+  //Classes created
+  menuContainer.classList.add("menu");
+  // appending whole list to the container
+  menuContainer.appendChild("list");
 }
 
 createMenu(menuItems);
-
-// const menu = document.createElement('div')
-// const list = document.createElement('ul')
-// const item1 = document.createElement('li')
-// const item2= document.createElement('li')
-// const item3 = document.createElement('li')
-// const item4 = document.createElement('li')
-// const item5 = document.createElement('li')
-// const item6 = document.createElement('li')
-
-// menu.classList.add('menu');
-
-// menu.appendChild('list');
-// list.appendChild('item1');
-// list.appendChild('item2');
-// list.appendChild('item3');
-// list.appendChild('item4');
-// list.appendChild('item5');
-// list.appendChild('item6');
-// }
