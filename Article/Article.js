@@ -110,24 +110,25 @@ const data = [
   Step 4: Map over the data, creating a component for each oject and add each component to the DOM as children of the 'articles' div.
 
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
-
 */
+const myArticle = {
+  title: "This Is My Article",
+  date: "Nov 5, 2019",
+  firstParagraph: `Hodor hodor HODOR! Hodor hodor - hodor, hodor. Hodor hodor... Hodor hodor hodor; hodor hodor. Hodor hodor hodor, hodor, hodor
+  hodor. Hodor, hodor. Hodor. Hodor, hodor - hodor... Hodor hodor hodor; hodor HODOR hodor, hodor hodor?! Hodor hodor, hodor.
+  Hodor hodor hodor hodor hodor! Hodor hodor - HODOR hodor, hodor hodor hodor hodor hodor; hodor hodor? `,
 
-// data.map(function(item) {
-//   container.appendChild(
-//     newArticle(
-//       item.title,
-//       item.date,
-//       item.firstParagraph,
-//       item.secondParagraph,
-//       item.thirdParagraph
-//     )
-//   );
-// });
+  secondParagraph: `Hodor, hodor. Hodor. Hodor, hodor, hodor. Hodor hodor, hodor. Hodor hodor, hodor, hodor hodor. Hodor! Hodor hodor, hodor;
+  hodor hodor hodor? Hodor, hodor. Hodor. Hodor, hodor - HODOR hodor, hodor hodor hodor! Hodor, hodor. Hodor. Hodor, HODOR
+  hodor, hodor hodor, hodor, hodor hodor. Hodor hodor - hodor - hodor... Hodor hodor hodor hodor hodor hodor hodor?! Hodor
+  hodor - hodor hodor hodor. Hodor. Hodor hodor... Hodor hodor hodor hodor hodor? `,
 
-// data.map(item => {
-//   console.log(item.date);
-// });
+  thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
+  Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
+  Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+};
+
+data.push(myArticle);
 
 const articlesContainer = document.querySelector(".articles");
 
@@ -162,7 +163,6 @@ function newArticle(title, date, p1, p2, p3) {
 
   //Event Listener
   btn.addEventListener("click", () => {
-    console.log("clicked");
     articleBody.classList.toggle("article-open");
   });
 
