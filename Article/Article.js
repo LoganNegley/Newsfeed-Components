@@ -149,7 +149,7 @@ function newArticle(title, date, p1, p2, p3) {
   articleBody.appendChild(content3);
   articleBody.appendChild(btn);
   //Classess added
-  articleBody.classList.add("article", "article-open");
+  articleBody.classList.add("article");
   dateCreated.classList.add("date");
   btn.classList.add("expandButton");
 
@@ -159,7 +159,7 @@ function newArticle(title, date, p1, p2, p3) {
   content1.textContent = p1;
   content2.textContent = p2;
   content3.textContent = p3;
-  btn.textContent = "Press Here";
+  btn.textContent = "Close";
 
   //Event Listener
   btn.addEventListener("click", () => {
