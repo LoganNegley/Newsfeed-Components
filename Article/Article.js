@@ -113,38 +113,70 @@ const data = [
 
 */
 
-function newArticle(obj) {
+// data.map(function(item) {
+//   container.appendChild(
+//     newArticle(
+//       item.title,
+//       item.date,
+//       item.firstParagraph,
+//       item.secondParagraph,
+//       item.thirdParagraph
+//     )
+//   );
+// });
+
+// data.map(item => {
+//   console.log(item.date);
+// });
+
+const articlesContainer = document.querySelector(".articles");
+
+function newArticle(title, date, p1, p2, p3) {
   //Creating elements
   const articleBody = document.createElement("div");
-  const title = document.createElement("h2");
-  const date = document.createElement("p");
+  const articleTitle = document.createElement("h2");
+  const dateCreated = document.createElement("p");
   const content1 = document.createElement("p");
   const content2 = document.createElement("p");
   const content3 = document.createElement("p");
   const btn = document.createElement("span");
-
   //Structure created
-  articleBody.appendChild(title);
-  articleBody.appendChild(date);
+  articleBody.appendChild(articleTitle);
+  articleBody.appendChild(dateCreated);
   articleBody.appendChild(content1);
   articleBody.appendChild(content2);
   articleBody.appendChild(content3);
   articleBody.appendChild(btn);
-
   //Classess added
   articleBody.classList.add("article", "article-open");
-  date.classList.add("date");
+  dateCreated.classList.add("date");
   btn.classList.add("expandButton");
 
-  //EventListener to button
-  // const articleOpen = document.querySelector(".article-open");
-  // articleOpen.addEventListener("toggle", () => {
-  //   alert("toggled");
-  // });
+  //  Text content
+  articleTitle.textContent = title;
+  dateCreated.textContent = date;
+  content1.textContent = p1;
+  content2.textContent = p2;
+  content3.textContent = p3;
+  btn.textContent = "Press Here";
+
+  //Event Listener
+  btn.addEventListener("click", () => {
+    console.log("clicked");
+    articleBody.classList.toggle("article-open");
+  });
 
   return articleBody;
 }
 
-const articles = document.querySelector(".articles");
-
-articles.appendChild(newArticle());
+data.forEach(data => {
+  articlesContainer.appendChild(
+    newArticle(
+      data.title,
+      data.date,
+      data.firstParagraph,
+      data.secondParagraph,
+      data.thirdParagraph
+    )
+  );
+});
