@@ -37,19 +37,27 @@ let menuItems = [
 function createMenu(arr) {
   // Created Elements
   const menuContainer = document.createElement("div");
-  const list = document.createElement("ul");
+  const listItems = document.createElement("ul");
 
   //Iterating array and appending it to div
   arr.forEach(item => {
     const newItem = document.createElement("li");
     newItem.textContent = item;
-    list.appendChild(newItem);
+    listItems.appendChild(newItem);
   });
 
   //Classes created
   menuContainer.classList.add("menu");
   // appending whole list to the container
-  menuContainer.appendChild("list");
+  menuContainer.appendChild(listItems);
+
+  // Toggle menu
+  const menuBtn = document.querySelector(".menu-button");
+  menuBtn.addEventListener("click", () => {
+    menuContainer.classList.toggle("menu--open");
+  });
+
+  return menuContainer;
 }
 
-createMenu(menuItems);
+document.querySelector(".header").appendChild(createMenu(menuItems));
